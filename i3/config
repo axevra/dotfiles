@@ -4,7 +4,11 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
+# Send focused window to scratchpad
+bindsym $mod+Shift+minus move scratchpad
 
+# Show the next window in scratchpad
+bindsym $mod+minus scratchpad show
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -47,13 +51,13 @@ floating_modifier $mod
 # move tiling windows via drag & drop by left-clicking into the title bar,
 
 #wall paper
-exec_always feh --bg-fill /home/eclipxia/wallpaper/12.jpg
+exec_always feh --bg-fill /home/eclipxia/wallpaper/nord-background/ign_dudeOnBuilding3.png
 
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -68,10 +72,10 @@ bindsym $mod+d exec --no-startup-id rofi -show drun -theme ~/.config/rofi/launch
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -80,10 +84,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -92,7 +96,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+u split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -210,7 +214,6 @@ bar {
   }
 }
 #keybinding 
-bindsym $mod+shift+b exec i3lock
 bindsym $mod+shift+f exec firefox
 bindsym $mod+shift+o exec obsidian
 # assign program workspace
@@ -225,7 +228,5 @@ exec_always autotiling
 #transparense 
 exec_always --no-startup-id picom --config
 exec_always picom
-
 #gaps
-gaps inner 7
-gaps outer 5
+gaps inner 10
