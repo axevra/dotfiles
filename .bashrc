@@ -10,13 +10,15 @@ alias mkdir='mkdir -p'
 alias ping='ping -c 10'
 alias c='clear'
 alias distro='cat /etc/lsb-release | grep DESCRIPT | sed -e "s|.*=||" | sed -e "s|\"||g"'
+alias dani="jerry --dub --rofi -i -d -c"
+alias ani="jerry --rofi -i -d -c"
 cd ()
 
 {
 if [ -n "$1" ]; then
-builtin cd "$@" && lsd
+builtin cd "$@" && lsd -a
 else
-builtin cd ~ && lsd
+builtin cd ~ && lsd -a
 fi
 }
 
